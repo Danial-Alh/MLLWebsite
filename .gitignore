@@ -1,7 +1,7 @@
 .vscode
 .python-version
-**/__pycache__/
+__pycache__/
 *.pyc
 
-static/
+/static/
 db.sqlite3
