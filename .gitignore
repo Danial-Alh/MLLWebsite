@@ -3,6 +3,4 @@
 __pycache__/
 *.pyc
 
-/.data/static/
-/.data/media/
-/.data/db.sqlite3
+/.data/

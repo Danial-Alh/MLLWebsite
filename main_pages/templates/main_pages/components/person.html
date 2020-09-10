@@ -1,0 +1,17 @@
+{% load wagtailimages_tags %}
+
+<div class="card" style="width: 18rem;">
+  {% image person.profile_pic  max-200x200 as img %}
+
+  <img src="{{img.url}}" class="card-img-top" alt="{{ person.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ person.name }}</h5>
+    <p class="card-text">
+      {% if person.project_title != "" %}
+      Project Title: {{ person.project_title }}
+      {% endif %}
+    </p>
+    <a href="{{ person.homepage }}" class="btn btn-primary">Homepage</a>
+    <a href="mailto:{{ person.email }}" class="btn btn-primary">Email</a>
+  </div>
+</div>

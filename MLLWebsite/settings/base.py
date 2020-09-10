@@ -24,8 +24,10 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
+    'main_pages',
     'search',
+    'posts',
+    'snippets',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -52,8 +54,6 @@ INSTALLED_APPS = [
     'wagtail.contrib.modeladmin',
     'wagtailstreamforms',
     'private_storage',
-
-    'posts',
 ]
 
 MIDDLEWARE = [

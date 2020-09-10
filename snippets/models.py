@@ -20,10 +20,12 @@ class Person(models.Model):
     project_title = models.CharField(max_length=200, blank=True)
     position = models.CharField(max_length=50, choices=[
         ('administration', 'Administration'),
+
         ('phd', 'PhD student'),
         ('master', 'Master student'),
-        ('grad_alumini', 'Graduate Alumini'),
         ('undergrad', 'Undergraduate student'),
+        
+        ('grad_alumini', 'Graduate Alumini'),
         ('undergrad_alumini', 'Undergraduate Alumini'),
     ])
     class_of = models.IntegerField(default=94)  # 96

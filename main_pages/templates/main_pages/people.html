@@ -1,0 +1,22 @@
+{% extends "main_pages/base.html" %}
+{% load snippet_tags %}
+
+{% block title %}
+People - Machine Learning Lab
+{% endblock title %}
+
+{% block content %}
+
+{% get_persons "administration" as administrations %}
+{% get_persons "phd" as phd_persons %}
+{% get_persons "master" as master_persons %}
+{% get_persons "undergrad" as undergrad_persons %}
+{% get_persons "grad_alumini" as grad_alumini_persons %}
+{% get_persons "undergrad_alumini" as undergrad_alumini_persons %}
+
+<div class="container">
+    {% for person in master_persons %}
+    {% include "main_pages/components/person.html" with person=person %}
+    {% endfor %}
+</div>
+{% endblock content %}
