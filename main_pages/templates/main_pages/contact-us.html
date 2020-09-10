@@ -1,0 +1,23 @@
+{% extends "main_pages/base.html" %}
+{% load snippet_tags %}
+
+{% block content %}
+
+{% get_lab_infos as infos %}
+
+<div class="container">
+    <h1> Machine Learning Lab (MLL) </h1>
+    <h5> Sharif University of Technology </h5>
+
+    <dl class="row">
+        <dt class="col-sm-6">Address</dt>
+        <dd>{{ infos.address }}</dd>
+
+        <dt class="col-sm-6">Phone Number</dt>
+        <dd>{{ infos.phone_number }}</dd>
+
+        <dt class="col-sm-6">Email</dt>
+        <dd>{{ infos.contact_email }}</dd>
+    </dl>
+</div>
+{% endblock content %}

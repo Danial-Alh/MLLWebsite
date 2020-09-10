@@ -1,0 +1,14 @@
+{% extends "main_pages/base.html" %}
+{% load snippet_tags %}
+
+{% block content %}
+
+{% get_lab_infos as infos %}
+
+<div class="container">
+    <h1> Machine Learning Lab (MLL) </h1>
+    <h5> Sharif University of Technology </h5>
+
+    <p> {{ infos.intoduction_text }} </p>
+</div>
+{% endblock content %}

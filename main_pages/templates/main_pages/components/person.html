@@ -8,7 +8,10 @@
     <h5 class="card-title">{{ person.name }}</h5>
     <p class="card-text">
       {% if person.project_title != "" %}
-      Project Title: {{ person.project_title }}
+      <dl class="row">
+        <dt class="col-sm-6">Project Title</dt>
+        <dd>{{ person.project_title }}</dd>
+      </dl>
       {% endif %}
     </p>
     <a href="{{ person.homepage }}" class="btn btn-primary">Homepage</a>

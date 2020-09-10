@@ -18,6 +18,9 @@ def get_courses():
     return Course.objects.all()
 
 @register.simple_tag
-def get_lab_info():
+def get_lab_infos():
     from snippets.models import LabInfo
-    return LabInfo.objects.all()[0]
+    result = LabInfo.objects.all()
+    if len(result) == 0:
+        return None
+    return result[0]

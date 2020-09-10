@@ -1,0 +1,13 @@
+{% extends "main_pages/base.html" %}
+{% load snippet_tags %}
+
+{% block content %}
+
+{% get_courses as courses %}
+
+<div class="container">
+    {% for course in courses %}
+    {% include "main_pages/components/course.html" with course=course %}
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% load wagtailimages_tags %}
+
+<div class="card" style="width: 18rem;">
+  {% image course.pic  max-200x200 as img %}
+
+  <img src="{{img.url}}" class="card-img-top" alt="{{ course.title }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ course.title }}</h5>
+    <p class="card-text">
+      <dl class="row">
+        <dt class="col-sm-6">Instructor</dt>
+        <dd>{{ course.instructor.name }}</dd>
+
+        <dt class="col-sm-6">Year</dt>
+        <dd>{{ course.year }}</dd>
+
+        <dt class="col-sm-6">Semester</dt>
+        <dd>{{ course.semester }}</dd>
+      </dl>
+
+    </p>
+    <a href="{{ course.coursepage }}" class="btn btn-primary">Coursepage</a>
+  </div>
+</div>
