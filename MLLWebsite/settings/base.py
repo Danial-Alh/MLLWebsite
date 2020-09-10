@@ -48,6 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'wagtail.contrib.modeladmin',
+    'wagtailstreamforms',
+    'private_storage',
+
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +97,7 @@ WSGI_APPLICATION = 'MLLWebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '.data/db.sqlite3'),
     }
 }
 
@@ -146,10 +152,10 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/3.1/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '.data/static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '.data/media')
 MEDIA_URL = '/media/'
 
 
@@ -159,4 +165,7 @@ WAGTAIL_SITE_NAME = "MLLWebsite"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'mll.ce.sharif.edu'
+
+PRIVATE_STORAGE_ROOT = 'private-media/'
+PRIVATE_STORAGE_AUTH_FUNCTION = 'private_storage.permissions.allow_authenticated'
