@@ -24,7 +24,7 @@ class Person(models.Model):
         ('phd', 'PhD student'),
         ('master', 'Master student'),
         ('undergrad', 'Undergraduate student'),
-        
+
         ('grad_alumini', 'Graduate Alumini'),
         ('undergrad_alumini', 'Undergraduate Alumini'),
     ])
@@ -84,7 +84,7 @@ class Paper(models.Model):
     ]
 
     def __str__(self):
-        pass
+        return self.title
 
 
 @register_snippet
@@ -119,7 +119,7 @@ class Course(models.Model):
     ]
 
     def __str__(self):
-        pass
+        return self.title
 
 
 @register_snippet

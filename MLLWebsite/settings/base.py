@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from dotenv import load_dotenv
 import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -169,3 +170,18 @@ BASE_URL = 'mll.ce.sharif.edu'
 
 PRIVATE_STORAGE_ROOT = 'private-media/'
 PRIVATE_STORAGE_AUTH_FUNCTION = 'private_storage.permissions.allow_authenticated'
+
+WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL = 'posts.AdvancedFormSetting'
+
+load_dotenv()
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_FROM = os.getenv("EMAIL_FROM")
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_HOST_USER = os.getenv("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASS")
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_TIMOUT = 10
+
+# print(EMAIL_FROM, EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)

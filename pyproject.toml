@@ -9,6 +9,7 @@ python = "^3.7"
 wagtail = "^2.10.1"
 wagtailstreamforms = "^3.11"
 django-private-storage = "^2.2.2"
+python-dotenv = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 poetry = "^1.0.10"
