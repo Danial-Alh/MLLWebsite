@@ -175,13 +175,16 @@ WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL = 'posts.AdvancedFormSetting'
 
 load_dotenv()
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 EMAIL_FROM = os.getenv("EMAIL_FROM")
 EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_HOST_USER = os.getenv("EMAIL_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASS")
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+EMAIL_USE_SSL = bool(int(os.getenv("EMAIL_SSL")))
+EMAIL_USE_TLS = bool(int(os.getenv("EMAIL_TLS")))
 EMAIL_TIMOUT = 10
 
-# print(EMAIL_FROM, EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
+# print(EMAIL_FROM, EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_USE_SSL, EMAIL_USE_TLS)

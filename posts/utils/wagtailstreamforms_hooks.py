@@ -39,4 +39,4 @@ def email_submission(instance, form):
             email.attach(file.name, file.read(), file.content_type)
 
     # finally send the email
-    email.send()
+    email.send(fail_silently=False)
