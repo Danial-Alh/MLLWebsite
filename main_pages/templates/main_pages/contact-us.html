@@ -5,10 +5,11 @@
 
 {% get_lab_infos as infos %}
 
-<div class="container">
-    <h1> Machine Learning Lab (MLL) </h1>
-    <h5> Sharif University of Technology </h5>
+<div class="jumbotron">
+    <h1 class="display-3">Machine Learning Lab (MLL)</h1>
+    <p class="lead"> Sharif University of Technology </p>
 
+    <hr class="my-4">
     <dl class="row">
         <dt class="col-sm-6">Address</dt>
         <dd>{{ infos.address }}</dd>
@@ -20,4 +21,7 @@
         <dd>{{ infos.contact_email }}</dd>
     </dl>
 </div>
+
+
+
 {% endblock content %}

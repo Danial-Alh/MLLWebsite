@@ -14,7 +14,8 @@ class Person(models.Model):
         ("ms", "Ms."),
         ("dr", "Dr.")
     ])  # mr ms dr
-    name = models.CharField(max_length=200)
+    firstname = models.CharField(max_length=100)
+    lastname = models.CharField(max_length=100)
     homepage = models.URLField(blank=True)
     email = models.EmailField()
     project_title = models.CharField(max_length=200, blank=True)
@@ -28,7 +29,7 @@ class Person(models.Model):
         ('grad_alumini', 'Graduate Alumini'),
         ('undergrad_alumini', 'Undergraduate Alumini'),
     ])
-    class_of = models.IntegerField(default=94)  # 96
+    class_of = models.FloatField(default=94)  # 96
     profile_pic = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -39,7 +40,8 @@ class Person(models.Model):
 
     panels = [
         FieldPanel('title'),
-        FieldPanel('name'),
+        FieldPanel('firstname'),
+        FieldPanel('lastname'),
         FieldPanel('homepage'),
         FieldPanel('email'),
         FieldPanel('project_title'),
@@ -49,7 +51,7 @@ class Person(models.Model):
     ]
 
     def __str__(self):
-        return self.name
+        return self.get_title_display() + ' ' + self.lastname + ' (' + self.get_position_display() + ')'
 
 
 @register_snippet
@@ -119,7 +121,7 @@ class Course(models.Model):
     ]
 
     def __str__(self):
-        return self.title
+        return ', '.join((self.title, self.get_semester_display() + ' ' + str(self.year)))
 
 
 @register_snippet

@@ -5,9 +5,7 @@
 
 {% get_courses as courses %}
 
-<div class="container">
-    {% for course in courses %}
-    {% include "main_pages/components/course.html" with course=course %}
-    {% endfor %}
-</div>
+{% for course in courses %}
+{% include "main_pages/components/course.html" with course=course %}
+{% endfor %}
 {% endblock content %}

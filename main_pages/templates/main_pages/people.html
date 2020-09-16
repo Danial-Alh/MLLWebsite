@@ -10,9 +10,7 @@
 {% get_persons "grad_alumini" as grad_alumini_persons %}
 {% get_persons "undergrad_alumini" as undergrad_alumini_persons %}
 
-<div class="container">
-    {% for person in master_persons %}
-    {% include "main_pages/components/person.html" with person=person %}
-    {% endfor %}
-</div>
+{% for person in master_persons %}
+{% include "main_pages/components/person.html" with person=person %}
+{% endfor %}
 {% endblock content %}
